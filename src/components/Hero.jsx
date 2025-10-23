@@ -3,36 +3,41 @@ import profile from "../assets/aynal.jpg";
 
 function Hero() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 overflow-hidden">
+    <motion.section
+  className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-600 via-purple-500 to-pink-500 text-white px-6"
+  initial={{ backgroundPosition: "0% 50%" }}
+  animate={{ backgroundPosition: "100% 50%" }}
+  transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+>
 
       {/* Profile Picture Animation */}
       <motion.img
         src={profile}
         alt="Profile"
-        className="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6"
+        className="w-40 h-40 rounded-full border-4 border-white shadow-lg mb-6"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 2, ease: "easeOut" }}
       />
 
       {/* Name Animation */}
       <motion.h1
-        className="text-5xl font-extrabold mb-4"
+        className="text-6xl font-extrabold mb-3"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
+        transition={{ duration: 2, delay: 0.3 }}
       >
-        Hi, I’m <span className="text-yellow-300">Aynal</span> 👋
+        Hi, I’m <span className="text-yellow-400">Aynal Haque</span> 👋
       </motion.h1>
 
       {/* Subtitle Animation */}
       <motion.p
         className="text-xl mb-6 max-w-lg"
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
       >
-        A passionate <span className="font-semibold">React & Django Developer</span> from Bangladesh — 
+        A passionate <span className="font-semibold">React,Node Js & Django Developer</span> from Bangladesh — 
         I love building modern, fast, and elegant web applications.
       </motion.p>
 
@@ -46,7 +51,7 @@ function Hero() {
       >
         View My Work
       </motion.a>
-    </section>
+    </motion.section>
   );
 }
 
