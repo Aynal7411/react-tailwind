@@ -16,7 +16,7 @@ function Hero() {
         alt="Profile"
         className="w-40 h-40 rounded-full border-4 border-white shadow-lg mb-6"
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 ,rotate: 360}}
         transition={{ duration: 2, ease: "easeOut" }}
       />
 
@@ -46,8 +46,8 @@ function Hero() {
         href="#projects"
         className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        animate={{ opacity: 1, scale: 1 , rotate: 360}}
+        transition={{ duration: 0.8, delay: 1 ,ease: "easeOut",type: "tween"}}
       >
         View My Work
       </motion.a>
